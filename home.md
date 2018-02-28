@@ -1,4 +1,6 @@
 <!-- TITLE: Home -->
 <!-- SUBTITLE: Wiki de coposoftware -->
 
-# Este es el wiki de COPO Software
+# Overview
+Esta es una prueba del wiki de copo software
+# Best practice
