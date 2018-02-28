@@ -62,17 +62,21 @@ Iniciar el servicio
 /usr/local/apache/bin/apachectl start
 ```
 # JPGE Support
+```sh
 wget http://www.ijg.org/files/jpegsrc.v9b.tar.gz
 tar xzvf jpegsrc.v9b.tar.gz
 ./configure -enable-shared
 make
 make install
 cp libjpeg.* /usr/lib/
+```
 # PHP
+```sh
 wget http://br2.php.net/distributions/php-5.6.30.tar.gz
 tar xzvf php-5.6.30.tar.gz
 cd php-5.6.30
 apt-get install libxml++2.6-dev
+```
 # GD
 wget https://www.pccc.com/downloads/gd/gd-2.0.33.tar.gz
 tar xzvf gd-2.0.33.tar.gz
@@ -85,19 +89,20 @@ apt-get install libmcrypt-dev
 # PNG.h
 apt-get install libpng-dev
 # libbz2
+```sh
 apt-get install libbz2-dev
 ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/lib --with-zlib-dir --enable-zip --with-bz2 --with-openssl --with-apxs2=/usr/local/apache/bin/apxs --enable-mbstring --with-mcrypt --with-gd --with-jpeg-dir=/usr/lib
 make
 make install
 cp php-5.6.30/php.ini-production /usr/local/php/lib/php.ini
 nano /usr/local/apache/conf/httpd.conf
-
+```
 Buscar la linea
-
+```sh
 LoadModule php5_module        modules/libphp5.so
-
+```
 y adicionar enseguida
-
+```sh
 <IfModule dir_module>
         DirectoryIndex index.html index.php
 </IfModule>
@@ -105,31 +110,47 @@ y adicionar enseguida
 AddHandler php5-script .php
 AddType application/x-httpd-php .php .phtml
 AddType application/x-httpd-php-source .phps
-
+```
+Luego
+```sh
 nano /etc/profile.d/php.sh
-
+```
+Adicionar las siguientes lineas en el archivo
+```sh
 PATH=$PATH:/usr/local/php/bin
 export PATH
-
+```
+Guardar y salir, luego crear el archivo
+```sh
 nano /etc/profile.d/php.csh
-
+```
+Y adicionar las variables
+```sh
 PATH=$PATH:/usr/local/php/bin
 export PATH
-
+```
+Editar el archivo .ini
+```sh
 nano /usr/local/php/lib/php.ini
-
-buscar date.timezone y dejar como date.timezone = America/Bogota
-
+```
+buscar date.timezone y dejar como 
+```sh
+date.timezone = America/Bogota
+```
 exportar variable php
 
 crear o editar el archivo /root/.bash_profile con la informacion
-
+```sh
 PATH=$PATH:/usr/local/php/bin/
 export PATH
+```
 
+Reiniciar el servicio
+```sh
 /usr/local/apache/bin/apachectl restart
+```
 
-Reiniciar la terminal
+Finalmente reiniciar la terminal
 # MySql
 Instalación
 
