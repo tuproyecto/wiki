@@ -70,11 +70,8 @@ make
 make install
 cp libjpeg.* /usr/lib/
 ```
-# PHP
+# libxml++2.6-dev
 ```sh
-wget http://br2.php.net/distributions/php-5.6.30.tar.gz
-tar xzvf php-5.6.30.tar.gz
-cd php-5.6.30
 apt-get install libxml++2.6-dev
 ```
 # GD
@@ -91,6 +88,12 @@ apt-get install libpng-dev
 # libbz2
 ```sh
 apt-get install libbz2-dev
+```
+# PHP
+```sh
+wget http://br2.php.net/distributions/php-5.6.30.tar.gz
+tar xzvf php-5.6.30.tar.gz
+cd php-5.6.30
 ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/lib --with-zlib-dir --enable-zip --with-bz2 --with-openssl --with-apxs2=/usr/local/apache/bin/apxs --enable-mbstring --with-mcrypt --with-gd --with-jpeg-dir=/usr/lib
 make
 make install
