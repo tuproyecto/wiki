@@ -297,6 +297,12 @@ apt-get install libcurl4-gnutls-dev
 ```sh
 ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/lib --with-zlib-dir --enable-zip --with-bz2 --with-openssl --with-apxs2=/usr/local/apache/bin/apxs --enable-mbstring --with-mcrypt --with-gd --with-jpeg-dir=/usr/lib --with-mysql --with-mysqli --enable-cli --with-pgsql=/usr/local/pgsql --with-pdo-pgsql=/usr/local/pgsql --with-curl --enable-calendar --enable-soap
 ```
+# PHPPGADMIN
+```sh
+wget http://downloads.sourceforge.net/phppgadmin/phpPgAdmin-5.1.tar.gz
+tar zxvf phpPgAdmin-5.1.tar.gz
+nano phpPgAdmin/conf/config.inc.php
+```
 # Git
 ```sh
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
@@ -309,12 +315,7 @@ tar zxvf node-v8.7.0.tar.gz
 make
 make install
 ```
-# PHPPGADMIN
-```sh
-wget http://downloads.sourceforge.net/phppgadmin/phpPgAdmin-5.1.tar.gz
-tar zxvf phpPgAdmin-5.1.tar.gz
-nano phpPgAdmin/conf/config.inc.php
-```
+
 Iniciar aplicación Node JS
 
 sobre scripst/node
