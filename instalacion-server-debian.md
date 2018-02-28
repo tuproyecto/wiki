@@ -23,7 +23,7 @@ cd..
 ```
 # PCRE
 ```sh
-ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.41.tar.gz
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.41.tar.gz
 tar -xvzf pcre-8.41.tar.gz
 cd pcre-8.41
 ./configure --prefix=/usr/local/pcre
