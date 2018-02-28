@@ -77,16 +77,22 @@ cp libjpeg.* /usr/lib/
 apt-get install libxml++2.6-dev
 ```
 # GD
+```sh
 wget https://www.pccc.com/downloads/gd/gd-2.0.33.tar.gz
 tar xzvf gd-2.0.33.tar.gz
 cd gd-2.0.33
 ./configure 
 make
 make install
+```
 # libmycrypt
+```sh
 apt-get install libmcrypt-dev
+```
 # PNG.h
+```sh
 apt-get install libpng-dev
+```
 # libbz2
 ```sh
 apt-get install libbz2-dev
@@ -158,7 +164,7 @@ Reiniciar el servicio
 Finalmente reiniciar la terminal
 # MySql
 Instalación
-
+```sh
 wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
 tar zxvf mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
 
@@ -184,18 +190,18 @@ bin/mysql_ssl_rsa_setup              # MySQL 5.7.6 and up
 chown -R root .
 chown -R mysql data mysql-files
 bin/mysqld_safe --user=mysql &
-
+```
 #Next command is optional
-
+```sh
 cp support-files/mysql.server /etc/init.d/mysql.server
 systemctl start mysqld
-
+```
 Postinstalación
-
+```sh
 /usr/local/mysql/bin/mysql_install_db --user=mysql --basedir=/usr/local/mysql --datadir=/var/lib/mysql/data/
-
+```
 #varialbles de ambiente
-
+```sh
 nano /etc/profile.d/mysql.sh
 PATH=$PATH:/usr/local/mysql/bin
 export PATH
@@ -203,11 +209,13 @@ export PATH
 nano /etc/profile.d/mysql.csh
 PATH=$PATH:/usr/local/mysql/bin
 export PATH
-
+```
 #al reiniciar la máquina ya estarán disponibles estos comandos
-
+```sh
 /usr/local/mysql/bin/mysqladmin -u root password 'password' 
+```
 # PHPMYADMIN
+```sh
 wget https://files.phpmyadmin.net/phpMyAdmin/4.6.6/phpMyAdmin-4.6.6-all-languages.tar.gz
 tar zxvf phpMyAdmin-4.6.6-all-languages.tar.gz
 mv phpMyAdmin-4.6.6-all-languages /usr/local/apache/htdocs/phpMyAdmin
@@ -215,15 +223,21 @@ useradd phpmy
 passwd phpmy
 cd /usr/local/apache/htdocs
 chown -R phpmy.daemon phpMyAdmin/
-
+```
 #Recompilar php con mysql
-
+```sh
 ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/lib --with-zlib-dir --enable-zip --with-bz2 --with-openssl --with-apxs2=/usr/local/apache/bin/apxs --enable-mbstring --with-mcrypt --with-gd --with-jpeg-dir=/usr/lib --with-mysql --with-mysqli 
-
+```
 Reiniciar apache
+```sh
+/usr/local/apache/bin/apachecrt restart
+```
 # libreadline-dev
+```sh
 apt-get install libreadline-dev
+```
 # POSTGRES 
+```sh
 wget https://ftp.postgresql.org/pub/source/v9.6.2/postgresql-9.6.2.tar.gz
 tar zxvf postgresql-9.6.2.tar.gz
 cd postgresql-9.6.2
@@ -236,17 +250,18 @@ chown postgres /var/lib/pgsql
 su - postgres
 /usr/local/pgsql/bin/initdb -D /var/lib/pgsql/data
 #/usr/local/pgsql/bin/postmaster -D /var/lib/pgsql/data >logfile 2>&1 &
-
+```
 #Iniciar el servicio 
+```sh
 /usr/local/pgsql/bin/pg_ctl -D /var/lib/pgsql/data -l logfile start
 exit
-
+```
 verificar que exitan los archivos de configuracion 
-
+```sh
 ls -lh /var/lib/pgsql/data 
-
+```
 si están con extensión .sample cambiarlos por .conf
-
+```sh
 nano /etc/profile.d/postgresql.sh
 
 PGSQL_HOME=”/usr/local/pgsql”
@@ -270,46 +285,59 @@ createuser tuproyecto
 psql template1
 ALTER USER tuproyecto WITH ENCRYPTED PASSWORD 'password';
 \q
-
+```
 #Restaurar base de datos http://www.damianculotta.com.ar/2008/10/14/restaurar-backups-de-postgresql/
+```sh
 pg_restore -h localhost -p 5432 -U tuproyecto -d tuproyecto -v '/home/admin/bd_postgres/tuproyectodb151218-1.backup'
 
 apt-get install curl
 apt-get install libcurl4-gnutls-dev
-
+```
 #Recompile php
-
+```sh
 ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/lib --with-zlib-dir --enable-zip --with-bz2 --with-openssl --with-apxs2=/usr/local/apache/bin/apxs --enable-mbstring --with-mcrypt --with-gd --with-jpeg-dir=/usr/lib --with-mysql --with-mysqli --enable-cli --with-pgsql=/usr/local/pgsql --with-pdo-pgsql=/usr/local/pgsql --with-curl --enable-calendar --enable-soap
+```
 # Git
+```sh
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+```
 # NODE
+```sh
 wget https://nodejs.org/dist/v8.7.0/node-v8.7.0.tar.gz
 tar zxvf node-v8.7.0.tar.gz
 ./configure
 make
 make install
+```
 # PHPPGADMIN
+```sh
 wget http://downloads.sourceforge.net/phppgadmin/phpPgAdmin-5.1.tar.gz
 tar zxvf phpPgAdmin-5.1.tar.gz
 nano phpPgAdmin/conf/config.inc.php
-
+```
 Iniciar aplicación Node JS
 
 sobre scripst/node
-
+```sh
 pm2 start ecosystem.config.js --env production
+```sh
 # Configuracion SSL
+```sh
 sudo apt-get update
 sudo apt-get upgrade openssl
-
+```
 Enable the Apache SSL module
-
+```sh
 sudo a2enmod ssl
 sudo a2ensite default-ssl
 sudo service apache2 reload
-
+```
+Crear la carpeta para los certificados
+```sh
 sudo mkdir /usr/local/apache/ssl
-
+```
+Generar los certificados
+```sh
 openssl genrsa -out coposoftware.key 2048
-
 openssl req -new -sha256 -days 365 -newkey rsa:2048 -key /usr/local/apache/ssl/coposoftware.key -out /usr/local/apache/ssl/coposoftware.csr
+```
