@@ -2,10 +2,8 @@
 <!-- SUBTITLE: Proceso de instalación servidor Debian -->
 
 # APR
-cd /usr/local/src/
-
-
 ```sh
+cd /usr/local/src/
 wget http://mirrors.axint.net/apache//apr/apr-1.4.6.tar.gz
 tar -xvzf apr-1.4.6.tar.gz
 cd apr-1.4.6/
@@ -13,9 +11,6 @@ cd apr-1.4.6/
 make
 make install
 ```
-
-
-cd..
 # APR Utils
 wget http://mirrors.axint.net/apache//apr/apr-util-1.4.1.tar.gz
 
