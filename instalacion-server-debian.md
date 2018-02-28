@@ -72,7 +72,7 @@ make
 make install
 cp libjpeg.* /usr/lib/
 ```
-# libxml++2.6-dev
+# libxml++
 ```sh
 apt-get install libxml++2.6-dev
 ```
