@@ -22,8 +22,10 @@ make install
 cd..
 ```
 # PCRE
-Download
 ```sh
+ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.41.tar.gz
+tar -xvzf pcre-8.41.tar.gz
+cd pcre-8.41
 ./configure --prefix=/usr/local/pcre
 make
 make install
