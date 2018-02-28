@@ -4,3 +4,4 @@
 # Overview
 En este wiki documentaremos todos los procesos de desarrollo de la plataforma con el fin de optimizar los procesos y crear una biblioteca compartida que nos permita acceder a información relevante del proceso de desarrollo.
 # Best practice
+* Prueba de contenido
