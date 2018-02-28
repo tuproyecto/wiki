@@ -1,4 +1,4 @@
 <!-- TITLE: Home -->
-<!-- SUBTITLE: A quick summary of Home -->
+<!-- SUBTITLE: Wiki de coposoftware -->
 
-# Header
+# Este es el wiki de COPO Software
