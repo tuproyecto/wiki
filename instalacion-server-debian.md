@@ -320,7 +320,7 @@ Iniciar aplicación Node JS
 sobre scripst/node
 ```sh
 pm2 start ecosystem.config.js --env production
-```sh
+```
 # Configuracion SSL
 ```sh
 sudo apt-get update
