@@ -41,7 +41,7 @@ cd openssl-1.0.2
 make
 make install
 cd ..
-# OPENSSL
+# APACHE
 wget https://archive.apache.org/dist/httpd/httpd-2.4.25.tar.gz
 tar -xvzf httpd-2.4.25.tar.gz
 cd httpd-2.4.25
