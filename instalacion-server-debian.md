@@ -4,12 +4,16 @@
 # APR
 cd /usr/local/src/
 
+
+```text
 wget http://mirrors.axint.net/apache//apr/apr-1.4.6.tar.gz
 tar -xvzf apr-1.4.6.tar.gz
 cd apr-1.4.6/
 ./configure
 make
 make install
+```
+
 cd..
 # APR Utils
 wget http://mirrors.axint.net/apache//apr/apr-util-1.4.1.tar.gz
