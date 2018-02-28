@@ -293,7 +293,7 @@ pg_restore -h localhost -p 5432 -U tuproyecto -d tuproyecto -v '/home/admin/bd_p
 apt-get install curl
 apt-get install libcurl4-gnutls-dev
 ```
-#Recompile php
+## Recompile php
 ```sh
 ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/lib --with-zlib-dir --enable-zip --with-bz2 --with-openssl --with-apxs2=/usr/local/apache/bin/apxs --enable-mbstring --with-mcrypt --with-gd --with-jpeg-dir=/usr/lib --with-mysql --with-mysqli --enable-cli --with-pgsql=/usr/local/pgsql --with-pdo-pgsql=/usr/local/pgsql --with-curl --enable-calendar --enable-soap
 ```
