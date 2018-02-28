@@ -12,20 +12,24 @@ make
 make install
 ```
 # APR Utils
+```sh
 wget http://mirrors.axint.net/apache//apr/apr-util-1.4.1.tar.gz
-
 tar -xvzf apr-util-1.4.1.tar.gz
 cd apr-util-1.4.1
 ./configure --with-apr=/usr/local/apr
 make
 make install
 cd..
+```
 # PCRE
 Download
+```sh
 ./configure --prefix=/usr/local/pcre
 make
 make install
+```
 # ZLIB
+```sh
 wget http://prdownloads.sourceforge.net/libpng/zlib-1.2.11.tar.gz
 tar -xvzf zlib-1.2.11.tar.gz
 cd zlib-1.2.11
@@ -33,7 +37,9 @@ cd zlib-1.2.11
 make
 make install
 cd ..
+```
 # OPENSSL
+```sh
 wget https://www.openssl.org/source/old/1.0.2/openssl-1.0.2.tar.gz
 tar -xvzf openssl-1.0.2.tar.gz
 cd openssl-1.0.2
@@ -41,14 +47,20 @@ cd openssl-1.0.2
 make
 make install
 cd ..
+```
 # APACHE
+```sh
 wget https://archive.apache.org/dist/httpd/httpd-2.4.25.tar.gz
 tar -xvzf httpd-2.4.25.tar.gz
 cd httpd-2.4.25
 ./configure --prefix=/usr/local/apache --enable-file-cache --enable-cache --enable-disk-cache -enable-ssl --enable-mem-cache --enable-deflate --enable-expires --enable-headers --enable-usertrack --enable-ssl --enable-cgi --enable-vhost-alias --enable-rewrite --enable-so --with-apr=/usr/local/apr/ -with-ssl=/usr/include/openssl/ --with-pcre=/usr/local/pcre --enable-proxy=shared
 make
 make install
+```
+Iniciar el servicio
+```sh
 /usr/local/apache/bin/apachectl start
+```
 # JPGE Support
 wget http://www.ijg.org/files/jpegsrc.v9b.tar.gz
 tar xzvf jpegsrc.v9b.tar.gz
