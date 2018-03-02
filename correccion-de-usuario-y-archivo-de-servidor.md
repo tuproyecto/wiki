@@ -82,7 +82,7 @@ cat authorized_keys
 Si ya esta bien el archivo procedemos a corregir el usuario propietario
 
 ```sh
-chown admin:admin authorized_key
+chown admin:admin authorized_keys
 ```
 
 revisamos que el propietario sea admin
@@ -94,8 +94,8 @@ ls -l
 Desmontamos el volumen
 
 ```sh
-cd /
 exit
+cd /
 sudo umount /mnt
 ```
 
