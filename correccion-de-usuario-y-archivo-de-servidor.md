@@ -10,37 +10,37 @@ Crear Snapshot
 
 Seleccionar el volumen sobre el que se quiere realizar el snap
 
-Adicionar nombre y descripcion
+Adicionar nombre y descripción
 
-luego boton Create
+Luego botón Create
 # Crear un volumen
 Seleccionar el snapshot, luego oprimir Actions y seleccionar la opción Create Volume
 
-Ir a la opcion Volumes o escoger el volumen que acabamos de crear. 
+Ir a la opción Volumes o escoger el Volumen que acabamos de crear. 
 
 # Montar el servidor de recuperación
-Seleccionar el volumen creado y oprimir el boton de Actions
+Seleccionar el Volumen creado y oprimir el botón de Actions
 
-Seleccionar la opcion Attach Volumen 
+Seleccionar la opción Attach Volumen 
 
-Seleccionar la instancia de recuperacion
+Seleccionar la instancia de recuperación
 
-y en Device la opcion en donde se montara para este caso /dev/sdf
+y en Device la opción en donde se montara para este caso /dev/sdf
 # Corregir el archivo
-Inicar la instancia de recuperacion y conectarse
-Montar el volumen
+Inicar la instancia de recuperación y conectarse
+Montar el Volumen
 
 ```sh
 sudo mount /dev/xvdf /mnt
 ```
 
-ir a volumen
+Ir a Volumen
 
 ```sh
 cd /mnt/home/admin/.ssh
 ```
 
-ver el usuario propietario del archivo authorized_keys, este debera ser admin
+Ver el usuario propietario del archivo authorized_keys, este deberá ser admin
 
 ```sh
 ls -l
@@ -52,13 +52,13 @@ Verificar que el archivo este bien, este archivo deber tener exactamente el mism
 cat authorized_keys
 ```
 
-Verificar la llave de conexion, normlamente en el equipo desde el que nos intentamos conectar
+Verificar la llave de conexión, normlamente en el equipo desde el que nos intentamos conectar
 
 ```sh
 ssh-keygen -yh -f devtuproyecto.pem
 ```
 
-Si el archivo authorized_keys esta diferente se debe editar para dejarla exactamente como la llave de conexion
+Si el archivo authorized_keys esta diferente se debe editar para dejarla exactamente como la llave de conexión
 Desocupamos el archivo, esto se debe hacer con el usuario root
 
 ```sh
@@ -66,7 +66,7 @@ sudo -s
 > authorized_keys
 ```
 
-y luego agregamos el valor la la llave .pem
+Y luego agregamos el valor la llave .pem
 
 ```sh
 vi authorized_keys
@@ -85,13 +85,13 @@ Si ya esta bien el archivo procedemos a corregir el usuario propietario
 chown admin:admin authorized_keys
 ```
 
-revisamos que el propietario sea admin
+Revisamos que el propietario sea admin
 
 ```sh
 ls -l
 ```
 
-Desmontamos el volumen
+Desmontamos el Volumen
 
 ```sh
 exit
@@ -99,16 +99,16 @@ cd /
 sudo umount /mnt
 ```
 
-nos salimos de la instancia
+Nos salimos de la instancia
 
 ```sh
 exit
 ```
 
 Detenemos la instancia
-En volumenes desmontamos el volumen de la instancia de recuperacion 
+En Volumenes desmontamos el Volumen de la instancia de recuperación 
 y lo montamos como columen principal en la instancia imagen en este caso /dev/sda
 Inicamos esta instancia y nos conectamos.
 
-Si permite la conexion el problema esta resuelto
+Si permite la conexión el problema esta resuelto
 
