@@ -33,6 +33,10 @@ Creamos el archivo .env
 ```text
 cp .env.local .env
 ```
+Modificar el sistema de cache de file a array en el archivo .env 
+```text
+CACHE_DRIVER=array
+```
 Generamos la llave
 ```text
 php artisan key:generate
