@@ -6,6 +6,7 @@ Realizamos una copia de la versión actual del proyecto en github
 
 ```text
 git clone https://github.com/tuproyecto/plataforma.git
+sudo chown -R usuario:usuario plataforma
 ```
 
 En un equipo que no tenga configurada la base de datos mongo db editamos los archivos composer.json quitando la linea 
