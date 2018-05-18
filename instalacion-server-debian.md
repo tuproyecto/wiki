@@ -355,3 +355,9 @@ Generar los certificados
 openssl genrsa -out coposoftware.key 2048
 openssl req -new -sha256 -days 365 -newkey rsa:2048 -key /usr/local/apache/ssl/coposoftware.key -out /usr/local/apache/ssl/coposoftware.csr
 ```
+Activar en apache los modulos de ssl
+```sh
+LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
+LoadModule ssl_module modules/mod_ssl.so
+Include conf/extra/httpd-ssl.conf
+```
