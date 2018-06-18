@@ -295,7 +295,7 @@ apt-get install libcurl4-gnutls-dev
 ```
 ## Recompile php
 ```sh
-./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/lib --with-zlib-dir --enable-zip --with-bz2 --with-openssl --with-apxs2=/usr/local/apache/bin/apxs --enable-mbstring --with-mcrypt --with-gd --with-jpeg-dir=/usr/lib --with-mysqli --with-pdo-mysql --enable-pdo --enable-cli --with-pgsql=/usr/local/pgsql --with-pdo-pgsql=/usr/local/pgsql --with-curl --enable-calendar --enable-soap
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/lib --with-zlib-dir --enable-zip --with-bz2 --with-openssl --with-apxs2=/usr/local/apache/bin/apxs --enable-mbstring --with-gd --with-jpeg-dir=/usr/lib --with-mysqli --with-pdo-mysql --enable-pdo --enable-cli --with-pgsql=/usr/local/pgsql --with-pdo-pgsql=/usr/local/pgsql --with-curl --enable-calendar --enable-soap
 ```
 ## Compilar Contrib
 ```sh
